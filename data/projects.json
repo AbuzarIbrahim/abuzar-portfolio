@@ -1,0 +1,70 @@
+{
+  "title": "Personal Projects",
+  "period": "2020 — 2025",
+  "projects": [
+    {
+      "year": "2025",
+      "title": "Voice-to-Voice Real-Time System",
+      "description": "Built voice to voice architecture and real-time systems using WebSockets and Bun runtime for high-performance communication.",
+      "tech": ["Bun", "WebSockets", "Node.js"],
+      "status": "Live"
+    },
+    {
+      "year": "2025",
+      "title": "Quiz WebApp (RBS Modulation)",
+      "description": "Developed a scalable, optimized Quiz-WebApp with RBS modulation using Next.js and Nest.js.",
+      "tech": ["Next.js", "Nest.js", "RBS"],
+      "status": "Live"
+    },
+    {
+      "year": "2025",
+      "title": "n8n AI Calling Agent Automation",
+      "description": "Automated workflows for AI Calling Agents using n8n, integrating real-time triggers and AI responses.",
+      "tech": ["n8n", "AI"],
+      "status": "Live"
+    },
+    {
+      "year": "2024",
+      "title": "Form Validation & UI Toolkit",
+      "description": "Experience with Next.js, Vite, and form validation using React Hook Form. Built responsive UIs with React, TypeScript, and Tailwind CSS.",
+      "tech": ["Next.js", "Vite", "React Hook Form", "React", "TypeScript", "Tailwind CSS"],
+      "status": "Live"
+    },
+    {
+      "year": "2024",
+      "title": "Real-Time Dashboards & AI Interfaces",
+      "description": "Developed real-time dashboards and AI interfaces for analytics and automation.",
+      "tech": ["React", "TypeScript", "AI"],
+      "status": "Live"
+    },
+    {
+      "year": "2024",
+      "title": "Mobile Device Management",
+      "description": "Monolithic Nest.js backend with secure authentication, UPI mandate handling, and remote device lock/unlock enforcement. Enabled fintech platform for EMI sales, loan repayments, and remote device management.",
+      "tech": ["Nest.js", "Next.js", "WhatsappBuisnessDev", "RBES", "PostgresSQL", "SwaggerDoc"],
+      "status": "Live"
+    },
+    {
+      "year": "2024",
+      "title": "AI CALLING AGENT – AI Lead Engagement & Support Platform",
+      "description": "Developed a multi-channel AI assistant for websites and WhatsApp to automate lead capture, support, and FAQs.",
+      "tech": ["Next.js", "shadcn", "AI SDK", "PAYLOAD CMS", "OpenAI"],
+      "status": "Live"
+    },
+    {
+      "year": "2023",
+      "title": "Data-Extraction-System",
+      "description": "Monolithic Nest.js backend handles OCR, regex-based field extraction, and secure Gmail SMTP via OAuth2. Sharp and Tesseract.js pipeline processes PDFs/Images for high-accuracy text extraction. Optimized frontend built with Next.js.",
+      "tech": ["Nest.js", "Next.js", "OCR (Tesseract.js)", "Regex", "Sharp", "SMTP"],
+      "status": "Live"
+    },
+    {
+      "year": "2023",
+      "title": "WordPress Portfolio Website",
+      "description": "Created and customized a personal portfolio website using WordPress, showcasing projects, skills, and achievements.",
+      "tech": ["WordPress", "PHP", "Elementor"],
+      "status": "Live"
+    }
+  ],
+  "note": "Stay tuned, there's more to come soon!"
+}

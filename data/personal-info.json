@@ -1,0 +1,95 @@
+{
+  "name": {
+    "first": "Abuzar",
+    "last": "Ibrahim"
+  },
+  "title": "Backend Engineer | Real-time Systems | AI & ML | System Design | API Architect",
+  "status": {
+    "available": true,
+    "text": "Available for work",
+    "location": "Kanpur, Uttar Pradesh, India"
+  },
+  "current": {
+    "role": "Backend Engineer",
+    "company": "Cubosquare Pvt Ltd",
+    "period": "Mar 2025 – present",
+    "location": "Mumbai, India",
+    "highlights": [
+      "Built voice to voice architecture and real-time systems with WebSockets of bun.",
+      "Developed a Quiz-WebApp with Scalable, Optimized and RBS modulation (Next.js & Nest.js)",
+      "n8n workflow automations for AI Calling Agents"
+    ]
+  },
+  "skills": [
+    "TypeScript", "Node.js", "C", "Javascript", "SQL", "React", "Nest.js", "Next.js",
+    "OpenAI API", "WordPress", "Git", "Docker", "VS Code", "WebSocket", "N8n"
+  ],
+    "education": [
+      {
+        "institution": "Allenhouse Institute of Technology, Kanpur",
+        "degree": "Bachelor of Technology in Computer Science and Engineering (AI & ML)",
+        "period": "July 2022 - June 2026",
+        "cgpa": "7"
+      }
+    ],
+    "experience": [
+      {
+        "role": "Backend Engineer",
+        "company": "Cubosquare Pvt Ltd",
+        "period": "Mar 2025 – present",
+        "location": "Mumbai, India",
+        "highlights": [
+          "Built voice to voice architecture and real-time systems with WebSockets of bun.",
+          "Developed a Quiz-WebApp with Scalable, Optimized and RBS modulation (Next.js & Nest.js)",
+          "n8n workflow automations for AI Calling Agents"
+        ]
+      },
+      {
+        "role": "UI Intern",
+        "company": "Androcoders",
+        "period": "Sep 2024 – Nov 2024",
+        "location": "Kanpur, India",
+        "highlights": [
+          "Experience with Next.js, Vite, and form validation with React Hook Form.",
+          "Built responsive UIs with React, TypeScript, and Tailwind CSS.",
+          "Developed real-time dashboards and AI interfaces."
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "Mobile Device Management",
+        "stack": ["Nest.js", "Next.js", "WhatsappBuisnessDev", "RBES", "PostgresSQL", "SwaggerDoc"],
+        "description": "Monolithic Nest.js backend with secure authentication, UPI mandate handling, and remote device lock/unlock enforcement. Enabled fintech platform for EMI sales, loan repayments, and remote device management."
+      },
+      {
+        "name": "AI CALLING AGENT – AI Lead Engagement & Support Platform",
+        "stack": ["Next.js", "shadcn", "AI SDK", "PAYLOAD CMS", "OpenAI"],
+        "description": "Developed a multi-channel AI assistant for websites and WhatsApp to automate lead capture, support, and FAQs."
+      },
+      {
+        "name": "Data-Extraction-System",
+        "stack": ["Nest.js", "Next.js", "OCR (Tesseract.js)", "Regex", "Sharp", "SMTP"],
+        "description": "Monolithic Nest.js backend handles OCR, regex-based field extraction, and secure Gmail SMTP via OAuth2. Sharp and Tesseract.js pipeline processes PDFs/Images for high-accuracy text extraction. Optimized frontend built with Next.js."
+      }
+    ],
+    "achievements": [
+      "Participated in SWAMLCS 24 — Student Workshop on Applications of Mathematics and Logic in Computer Science (Allenhouse Institute of Technology, Aug 2024) Certificate"
+    ],
+    "interests": [
+      "Computer Vision", "NLP", "Model Fine-Tuning", "AI Infrastructure", "SDK Development"
+    ],
+    "softSkills": [
+      "System Design Thinking", "Research-Oriented Mindset", "Strong Communication", "Client Handling", "Multitasking", "Problem Solving", "Team Collaboration", "Work-Driven-Attitude"
+    ],
+  "contact": {
+    "email": "abuzaribrahim755@gmail.com"
+  },
+  "social": [
+    { "name": "GitHub", "handle": "@Abuzaribrahim", "url": "https://github.com/AbuzarIbrahim" },
+    { "name": "LinkedIn", "handle": "mohd-Abuzar-ibrahim", "url": "https://www.linkedin.com/in/mohd-abuzar-ibrahim-6a47bb2a6/" }
+  ],
+  "resume": {
+    "url": "/Mohd_abuzar_ibrahim_resume.pdf"
+  }
+}

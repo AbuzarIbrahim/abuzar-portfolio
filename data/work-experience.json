@@ -1,0 +1,20 @@
+{
+  "title": "Selected Work",
+  "period": "2019 — 2025",
+  "experiences": [
+    {
+      "year": "2025",
+      "role": "Backend Engineer",
+      "company": "Cubosquare Pvt Ltd",
+      "description": "Built voice to voice architecture, real-time systems with WebSockets, and scalable Quiz-WebApp (Next.js & Nest.js). Automated n8n workflows for AI Calling Agents.",
+      "tech": ["Nest.js", "Next.js", "WebSocket", "n8n"]
+    },
+    {
+      "year": "2024",
+      "role": "UI Intern",
+      "company": "Androcoders",
+      "description": "Built responsive UIs, real-time dashboards, and AI interfaces using React, TypeScript, Tailwind CSS, Next.js, and Vite.",
+      "tech": ["React", "TypeScript", "Tailwind CSS", "Next.js", "Vite"]
+    }
+  ]
+}
