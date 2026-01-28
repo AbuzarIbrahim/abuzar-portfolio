@@ -109,7 +109,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                 </button>
               )}
 
-              <div className="text-xs sm:text-sm text-muted-foreground font-mono">© 2025 Mohd Abuzar Ibrahim</div>
+              <div className="text-xs sm:text-sm text-muted-foreground font-mono">© 2026 Mohd Abuzar Ibrahim</div>
             </div>
           </div>
         </footer>

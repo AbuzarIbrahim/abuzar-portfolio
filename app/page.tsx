@@ -69,23 +69,24 @@ export default function Home(): JSX.Element {
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 lg:gap-8">
             <div className="space-y-2">
               <div className="text-xs sm:text-sm text-muted-foreground">
-                © 2025 {personalInfoData.name.first} {personalInfoData.name.last}. All rights reserved.
+                © 2026 {personalInfoData.name.first} {personalInfoData.name.last}. All rights reserved.
               </div>
               <div className="text-xs text-muted-foreground">Built with Next.js and deployed on Vercel</div>
             </div>
-
-            <div className="flex items-center gap-3 sm:gap-4">
-              <ThemeToggle isDark={isDark} onToggle={toggleTheme} />
-
-              <button
-                onClick={() => setIsContactPopupOpen(true)}
-                className="group p-3 rounded-lg border border-border hover:border-muted-foreground/50 transition-all duration-300"
-              >
-                <MessageCircle className="w-4 h-4 sm:w-4 sm:h-4 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
-              </button>
-            </div>
           </div>
         </footer>
+
+      {/* Top-right corner buttons */}
+      <div className="fixed top-6 right-6 z-50 flex flex-row gap-3 items-center">
+        <ThemeToggle isDark={isDark} onToggle={toggleTheme} />
+        <button
+          onClick={() => setIsContactPopupOpen(true)}
+          className="group flex items-center gap-2 p-3 rounded-lg border border-border hover:border-muted-foreground/50 transition-all duration-300"
+        >
+          <MessageCircle className="w-4 h-4 sm:w-4 sm:h-4 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
+          <span className="text-sm sm:text-base text-muted-foreground group-hover:text-foreground transition-colors duration-300">Let's Connect</span>
+        </button>
+      </div>
       </main>
 
       <ContactPopup isOpen={isContactPopupOpen} onClose={() => setIsContactPopupOpen(false)} />

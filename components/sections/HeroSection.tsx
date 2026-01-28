@@ -12,7 +12,7 @@ export default function HeroSection({ data, sectionRef }: HeroSectionProps) {
       <div className="grid lg:grid-cols-5 gap-8 lg:gap-16 w-full">
         <div className="lg:col-span-3 space-y-6 lg:space-y-8">
           <div className="space-y-2">
-            <div className="text-xs sm:text-sm text-muted-foreground font-mono tracking-wider">PORTFOLIO / 2025</div>
+            <div className="text-xs sm:text-sm text-muted-foreground font-mono tracking-wider">PORTFOLIO / 2026</div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight">
               {data.name.first}
               <br />
