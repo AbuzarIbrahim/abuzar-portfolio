@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/guts.jpeg" type="image/jpeg" />
       </head>
       <body className="font-sans antialiased">
         <ThemeProvider
