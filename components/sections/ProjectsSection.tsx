@@ -20,7 +20,7 @@ export default function ProjectsSection({ data, sectionRef, className }: Project
   }
 
   return (
-    <section id="projects" ref={sectionRef} className={`py-8 opacity-0 ${className}`}>
+    <section id="projects" ref={sectionRef} className={`py-8 ${className}`}>
       <div className="space-y-4">
         <div className="flex items-end justify-between">
           <h2 className="text-3xl font-light">{data.title}</h2>
