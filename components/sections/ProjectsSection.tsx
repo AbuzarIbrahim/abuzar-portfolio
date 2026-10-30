@@ -1,3 +1,4 @@
+import { Fragment } from "react"
 import type { Projects } from "@/types/data"
 import { ExternalLink } from "lucide-react"
 
@@ -40,33 +41,48 @@ export default function ProjectsSection({ data, sectionRef, className }: Project
             </thead>
             <tbody>
               {data.projects.map((project) => (
-                <tr
-                  key={project.title}
-                  className="border-b border-border/50 hover:border-border transition-colors duration-500"
-                >
-                  <td className="py-4 pr-4 font-medium">{project.title}</td>
-                  <td className="py-4 pr-4">
-                    <div className="flex items-center gap-2">
-                      <div className={`w-2 h-2 rounded-full ${getStatusColor(project.status)}`}></div>
-                      <span className="text-sm text-muted-foreground">{project.status}</span>
-                    </div>
-                  </td>
-                  <td className="py-4 text-sm text-muted-foreground">
-                    {project.liveUrl ? (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors duration-300"
-                      >
-                        {getLinkLabel(project.liveUrl)}
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    ) : (
-                      "—"
-                    )}
-                  </td>
-                </tr>
+                <Fragment key={project.title}>
+                  <tr>
+                    <td className="pt-6 pb-3 pr-4 font-medium">{project.title}</td>
+                    <td className="pt-6 pb-3 pr-4">
+                      <div className="flex items-center gap-2">
+                        <div className={`w-2 h-2 rounded-full ${getStatusColor(project.status)}`}></div>
+                        <span className="text-sm text-muted-foreground">{project.status}</span>
+                      </div>
+                    </td>
+                    <td className="pt-6 pb-3 text-sm text-muted-foreground">
+                      {project.liveUrl ? (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors duration-300"
+                        >
+                          {getLinkLabel(project.liveUrl)}
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      ) : (
+                        "—"
+                      )}
+                    </td>
+                  </tr>
+                  <tr className="border-b border-border/50">
+                    <td colSpan={3} className="pb-6">
+                      <dl className="space-y-3 text-sm leading-relaxed">
+                        {[
+                          ["PROBLEM", project.problem],
+                          ["CHALLENGE", project.challenge],
+                          ["RESOLUTION", project.solution],
+                        ].map(([label, text]) => (
+                          <div key={label} className="grid sm:grid-cols-[6rem_1fr] gap-1 sm:gap-4">
+                            <dt className="text-xs text-muted-foreground font-mono pt-0.5">{label}</dt>
+                            <dd className="text-muted-foreground">{text}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </td>
+                  </tr>
+                </Fragment>
               ))}
             </tbody>
           </table>

@@ -5,13 +5,20 @@
     {
       "year": "2026",
       "title": "Suvidha EMI",
+      "problem": "Retailers selling phones on EMI need to track repayments, restrict devices when EMIs go overdue, and get their settlements paid out.",
+      "challenge": "Retailer onboarding saved the user and the bank details through two async steps a few hundred milliseconds apart. If they overlapped, the API still reported success, but the retailer could never be paid, and it only surfaced at payout time.",
+      "solution": "Made Razorpay contact creation independent of step order, so payout accounts are always set up, and wrote a script that reproduces the race to prove the fix. Added idempotent settlement credits with database locks and constraints, so a retry can't credit a retailer twice.",
       "description": "Built the backend for a 5-role EMI platform: IMEI-based device management, EMI and payment workflows, automated device restriction on overdue EMIs and Aadhaar OTP flows. Managed Docker, MinIO and Jenkins deployments.",
       "tech": ["NestJS", "PostgreSQL", "Docker", "MinIO", "Jenkins", "Razorpay", "Cashfree"],
-      "status": "Private"
+      "status": "Live",
+      "liveUrl": "https://suvidhaemi.in/"
     },
     {
       "year": "2026",
       "title": "eAdvocate Diary",
+      "problem": "Advocates need one place to manage cases, hearings, clients and junior team members, with reminders so hearings aren't missed.",
+      "challenge": "Dates were drifting: on a UTC server, \"today\" was a day behind until 5:30 AM IST, and date-only hearings could be saved a day early. Paid subscriptions also stayed pending whenever Razorpay's webhook didn't arrive.",
+      "solution": "Based \"today\" on India time, stored dates exactly as entered, and ran a migration to recompute every case's next and last hearing dates. Subscriptions now activate on a verified Checkout signature, with the webhook as a fallback and each activation and receipt written only once.",
       "description": "Owned the backend of a production legal case-management platform (~30 modules): OTP/JWT auth, RBAC for senior and junior advocates, team hierarchies, case, hearing and client management, and reminders. Integrated Firebase push, WhatsApp webhooks, Cloudinary, subscription payments, AI features and Excel/PDF export; deployed with Docker, Jenkins and PM2.",
       "tech": ["NestJS", "PostgreSQL", "MongoDB", "Firebase", "Cloudinary", "Docker", "Jenkins"],
       "status": "Live",
@@ -20,6 +27,9 @@
     {
       "year": "2025",
       "title": "AI Voice Calling Agent",
+      "problem": "Calling a list of leads by hand is slow, so businesses need an AI agent that can hold a real phone conversation and act on it.",
+      "challenge": "Live call audio has to pass through speech-to-text, the AI model and text-to-speech quickly enough to feel like a natural conversation, while the agent also triggers actions during the call.",
+      "solution": "Streamed Twilio call audio over WebSockets through Deepgram, Gemini and text-to-speech, using an event bus to coordinate the services. Added tool-calling and n8n webhooks so the agent can act during calls, and CSV upload with call logs for outbound campaigns.",
       "description": "Designed real-time voice-to-voice AI over WebSockets (Twilio, Deepgram STT, Gemini, TTS) with dynamic variable injection, tool-calling, n8n/webhook workflows and multilingual agents.",
       "tech": ["Bun", "TypeScript", "Twilio", "Deepgram", "Gemini 2.5 Flash", "OpenAI TTS", "Retell AI", "Vapi", "n8n"],
       "status": "Private"
@@ -27,6 +37,9 @@
     {
       "year": "2026",
       "title": "Mehram Match",
+      "problem": "Matchmaking consultants need to find suitable matches across each other's members, and families need a private way to talk.",
+      "challenge": "Partner search was half-built: location filters did nothing because the data sat in a JSONB column, and only some partner preferences were used. Chat also had to stay private, even from the server storing the messages.",
+      "solution": "Rebuilt search on a QueryBuilder with strict filters and weighted preference scoring. Built end-to-end encrypted chat where keys are derived on the client and the server stores only ciphertext, with Redis handling presence and unread counts.",
       "description": "Built a matchmaking backend with Admin and Consultant roles; designed and smoke-tested ~140 API endpoints; implemented real-time one-to-one chat (WebSockets + Redis) and an E2E encryption architecture.",
       "tech": ["NestJS", "PostgreSQL", "TypeORM", "Redis", "WebSockets", "JWT", "Zod"],
       "status": "Live",
@@ -35,6 +48,9 @@
     {
       "year": "2026",
       "title": "Rank Pilot AI",
+      "problem": "Agencies and local businesses need one platform to manage, audit and improve their Google Business Profiles across many locations.",
+      "challenge": "Every client shares one PostgreSQL database, so a single unscoped query could expose another client's data. The platform also stores clients' Google access tokens, and AI costs grow with every location.",
+      "solution": "Routed data access through a central tenant-scoping layer, with cross-tenant requests returning 404. Encrypted Google tokens with AES-256-GCM, moved content generation to the OpenAI Batch API for 50% lower cost, and added per-location token limits.",
       "description": "Built a multi-tenant SaaS on one shared PostgreSQL database with a central tenant-scoping layer, ownership constraints and RBAC for super admins, agencies and direct customers. Integrated Google Business Profile APIs via OAuth 2.0 with AES-256-GCM encrypted tokens, and built a 16-rule profile audit engine and an AI content pipeline on the OpenAI Batch API (50% lower generation cost). Added per-location AI token metering, GST invoicing, 93 Jest tests and Playwright end-to-end tests.",
       "tech": ["NestJS", "Next.js", "PostgreSQL", "TypeORM", "OpenAI API", "Google APIs", "OAuth 2.0", "Playwright"],
       "status": "Live",
@@ -43,6 +59,9 @@
     {
       "year": "2025",
       "title": "TAM AI",
+      "problem": "Recruiters lose time writing job descriptions, screening resumes, matching candidates and scheduling interviews.",
+      "challenge": "AI resume parsing didn't always return data in the expected format, and some uploaded files couldn't be parsed at all. A double-click on Apply could also create duplicate applications.",
+      "solution": "Validated AI output against a schema with one automatic retry, and recorded why a document failed to parse. Added a unique index allowing one live application per candidate per job, saved before any match is created or charged.",
       "description": "Built AI job-description generation, resume parsing, embedding-based candidate matching, AI interview reports, scheduling and Admin/Super Admin RBAC. Logged AI token usage with Grafana monitoring and automated job imports using n8n.",
       "tech": ["NestJS", "PostgreSQL", "Next.js", "Vercel AI SDK", "Gemini 2.5 Flash", "Grafana"],
       "status": "Live",
@@ -51,6 +70,9 @@
     {
       "year": "2026",
       "title": "WhatsApp & n8n Automation",
+      "problem": "Businesses need OTPs and customer messages handled over WhatsApp, with repetitive calling and business tasks automated.",
+      "challenge": "WhatsApp events arrive at the backend through webhooks, but the dashboard has to show them straight away without a page refresh.",
+      "solution": "Built a NestJS webhook flow with OTP templates and pushed events to the dashboard using Server-Sent Events and RxJS. Built n8n workflows connecting AI calling agents to business systems.",
       "description": "WhatsApp Business automation with webhooks, OTP templates and SSE/RxJS event delivery, plus n8n AI workflows for calling agents and business systems.",
       "tech": ["NestJS", "n8n", "WhatsApp Business API", "SSE", "RxJS"],
       "status": "Private"
@@ -58,6 +80,9 @@
     {
       "year": "2025",
       "title": "Data Extraction",
+      "problem": "Copying fields out of PDFs and scanned images by hand is slow and error-prone.",
+      "challenge": "Documents vary in quality and layout, which makes raw OCR text unreliable for pulling out specific fields.",
+      "solution": "Built a pipeline that prepares files with Sharp, reads them with Tesseract.js OCR and extracts fields with regex, with results sent securely through Gmail OAuth2 SMTP.",
       "description": "OCR pipeline with Tesseract.js and Sharp for extracting text from documents, with email delivery through Gmail OAuth2 SMTP.",
       "tech": ["NestJS", "Next.js", "Tesseract.js", "Sharp", "OAuth2"],
       "status": "Private"

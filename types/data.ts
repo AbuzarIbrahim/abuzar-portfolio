@@ -46,6 +46,9 @@ export interface Projects {
   projects: Array<{
     year: string
     title: string
+    problem: string
+    challenge: string
+    solution: string
     description: string
     tech: string[]
     status: string
