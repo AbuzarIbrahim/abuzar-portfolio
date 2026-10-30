@@ -1,5 +1,5 @@
 import type { Projects } from "@/types/data"
-import { ExternalLink, Github } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 
 interface ProjectsSectionProps {
   data: Projects
@@ -19,6 +19,8 @@ export default function ProjectsSection({ data, sectionRef, className }: Project
     }
   }
 
+  const getLinkLabel = (url: string) => url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")
+
   return (
     <section id="projects" ref={sectionRef} className={`py-8 ${className}`}>
       <div className="space-y-4">
@@ -27,66 +29,47 @@ export default function ProjectsSection({ data, sectionRef, className }: Project
           {/* <div className="text-sm text-muted-foreground font-mono">{data.period}</div> */}
         </div>
 
-        <div className="space-y-4">
-          {data.projects.map((project, index) => (
-            <div
-              key={index}
-              className="group py-8 border-b border-border/50 hover:border-border transition-colors duration-500"
-            >
-              <div>
-                <div className="text-2xl font-light text-muted-foreground group-hover:text-foreground transition-colors duration-500">
-                  {project.year}
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <div>
-                  <h3 className="text-xl font-medium">{project.title}</h3>
-                  <div className="flex items-center gap-2 mt-1">
-                    <div className={`w-2 h-2 rounded-full ${getStatusColor(project.status)}`}></div>
-                    <span className="text-sm text-muted-foreground">{project.status}</span>
-                  </div>
-                </div>
-                <p className="text-muted-foreground leading-relaxed max-w-lg">{project.description}</p>
-
-                <div className="flex items-center gap-3 pt-2">
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      Live
-                    </a>
-                  )}
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
-                    >
-                      <Github className="w-4 h-4" />
-                      GitHub
-                    </a>
-                  )}
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-2 lg:justify-end">
-                {project.tech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 text-xs text-muted-foreground rounded group-hover:border-muted-foreground/50 transition-colors duration-500"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+        <div className="overflow-x-auto">
+          <table className="w-full text-left">
+            <thead>
+              <tr className="border-b border-border text-xs sm:text-sm text-muted-foreground font-mono">
+                <th className="py-3 pr-4 font-normal">PROJECT</th>
+                <th className="py-3 pr-4 font-normal">STATUS</th>
+                <th className="py-3 font-normal">LIVE LINK</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.projects.map((project) => (
+                <tr
+                  key={project.title}
+                  className="border-b border-border/50 hover:border-border transition-colors duration-500"
+                >
+                  <td className="py-4 pr-4 font-medium">{project.title}</td>
+                  <td className="py-4 pr-4">
+                    <div className="flex items-center gap-2">
+                      <div className={`w-2 h-2 rounded-full ${getStatusColor(project.status)}`}></div>
+                      <span className="text-sm text-muted-foreground">{project.status}</span>
+                    </div>
+                  </td>
+                  <td className="py-4 text-sm text-muted-foreground">
+                    {project.liveUrl ? (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors duration-300"
+                      >
+                        {getLinkLabel(project.liveUrl)}
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    ) : (
+                      "—"
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
       {data.note && (

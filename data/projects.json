@@ -1,69 +1,66 @@
 {
-  "title": "Personal Projects",
-  "period": "2020 — 2026",
+  "title": "Major Projects",
+  "period": "2025 — 2026",
   "projects": [
     {
       "year": "2026",
-      "title": "Voice-to-Voice Real-Time System",
-      "description": "Built voice to voice architecture and real-time systems using WebSockets and Bun runtime for high-performance communication.",
-      "tech": ["Bun", "WebSockets", "Node.js"],
-      "status": "Live"
+      "title": "Suvidha EMI",
+      "description": "Built the backend for a 5-role EMI platform: IMEI-based device management, EMI and payment workflows, automated device restriction on overdue EMIs and Aadhaar OTP flows. Managed Docker, MinIO and Jenkins deployments.",
+      "tech": ["NestJS", "PostgreSQL", "Docker", "MinIO", "Jenkins", "Razorpay", "Cashfree"],
+      "status": "Private"
     },
     {
       "year": "2026",
-      "title": "Quiz WebApp (RBS Modulation)",
-      "description": "Developed a scalable, optimized Quiz-WebApp with RBS modulation using Next.js and Nest.js.",
-      "tech": ["Next.js", "Nest.js", "RBS"],
-      "status": "Live"
+      "title": "eAdvocate Diary",
+      "description": "Owned the backend of a production legal case-management platform (~30 modules): OTP/JWT auth, RBAC for senior and junior advocates, team hierarchies, case, hearing and client management, and reminders. Integrated Firebase push, WhatsApp webhooks, Cloudinary, subscription payments, AI features and Excel/PDF export; deployed with Docker, Jenkins and PM2.",
+      "tech": ["NestJS", "PostgreSQL", "MongoDB", "Firebase", "Cloudinary", "Docker", "Jenkins"],
+      "status": "Live",
+      "liveUrl": "https://www.eadvocatediary.com/"
+    },
+    {
+      "year": "2025",
+      "title": "AI Voice Calling Agent",
+      "description": "Designed real-time voice-to-voice AI over WebSockets (Twilio, Deepgram STT, Gemini, TTS) with dynamic variable injection, tool-calling, n8n/webhook workflows and multilingual agents.",
+      "tech": ["Bun", "TypeScript", "Twilio", "Deepgram", "Gemini 2.5 Flash", "OpenAI TTS", "Retell AI", "Vapi", "n8n"],
+      "status": "Private"
     },
     {
       "year": "2026",
-      "title": "n8n AI Calling Agent Automation",
-      "description": "Automated workflows for AI Calling Agents using n8n, integrating real-time triggers and AI responses.",
-      "tech": ["n8n", "AI"],
-      "status": "Live"
+      "title": "Mehram Match",
+      "description": "Built a matchmaking backend with Admin and Consultant roles; designed and smoke-tested ~140 API endpoints; implemented real-time one-to-one chat (WebSockets + Redis) and an E2E encryption architecture.",
+      "tech": ["NestJS", "PostgreSQL", "TypeORM", "Redis", "WebSockets", "JWT", "Zod"],
+      "status": "Live",
+      "liveUrl": "https://www.mehrammatch.com/"
+    },
+    {
+      "year": "2026",
+      "title": "Rank Pilot AI",
+      "description": "Built a multi-tenant SaaS on one shared PostgreSQL database with a central tenant-scoping layer, ownership constraints and RBAC for super admins, agencies and direct customers. Integrated Google Business Profile APIs via OAuth 2.0 with AES-256-GCM encrypted tokens, and built a 16-rule profile audit engine and an AI content pipeline on the OpenAI Batch API (50% lower generation cost). Added per-location AI token metering, GST invoicing, 93 Jest tests and Playwright end-to-end tests.",
+      "tech": ["NestJS", "Next.js", "PostgreSQL", "TypeORM", "OpenAI API", "Google APIs", "OAuth 2.0", "Playwright"],
+      "status": "Live",
+      "liveUrl": "https://app.rankpilot.ai.in/"
     },
     {
       "year": "2025",
-      "title": "Form Validation & UI Toolkit",
-      "description": "Experience with Next.js, Vite, and form validation using React Hook Form. Built responsive UIs with React, TypeScript, and Tailwind CSS.",
-      "tech": ["Next.js", "Vite", "React Hook Form", "React", "TypeScript", "Tailwind CSS"],
-      "status": "Live"
+      "title": "TAM AI",
+      "description": "Built AI job-description generation, resume parsing, embedding-based candidate matching, AI interview reports, scheduling and Admin/Super Admin RBAC. Logged AI token usage with Grafana monitoring and automated job imports using n8n.",
+      "tech": ["NestJS", "PostgreSQL", "Next.js", "Vercel AI SDK", "Gemini 2.5 Flash", "Grafana"],
+      "status": "Live",
+      "liveUrl": "https://www.tam.ai.in/"
+    },
+    {
+      "year": "2026",
+      "title": "WhatsApp & n8n Automation",
+      "description": "WhatsApp Business automation with webhooks, OTP templates and SSE/RxJS event delivery, plus n8n AI workflows for calling agents and business systems.",
+      "tech": ["NestJS", "n8n", "WhatsApp Business API", "SSE", "RxJS"],
+      "status": "Private"
     },
     {
       "year": "2025",
-      "title": "Real-Time Dashboards & AI Interfaces",
-      "description": "Developed real-time dashboards and AI interfaces for analytics and automation.",
-      "tech": ["React", "TypeScript", "AI"],
-      "status": "Live"
-    },
-    {
-      "year": "2025",
-      "title": "Mobile Device Management",
-      "description": "Monolithic Nest.js backend with secure authentication, UPI mandate handling, and remote device lock/unlock enforcement. Enabled fintech platform for EMI sales, loan repayments, and remote device management.",
-      "tech": ["Nest.js", "Next.js", "WhatsappBuisnessDev", "RBES", "PostgresSQL", "SwaggerDoc"],
-      "status": "Live"
-    },
-    {
-      "year": "2025",
-      "title": "AI CALLING AGENT – AI Lead Engagement & Support Platform",
-      "description": "Developed a multi-channel AI assistant for websites and WhatsApp to automate lead capture, support, and FAQs.",
-      "tech": ["Next.js", "shadcn", "AI SDK", "PAYLOAD CMS", "OpenAI"],
-      "status": "Live"
-    },
-    {
-      "year": "2024",
-      "title": "Data-Extraction-System",
-      "description": "Monolithic Nest.js backend handles OCR, regex-based field extraction, and secure Gmail SMTP via OAuth2. Sharp and Tesseract.js pipeline processes PDFs/Images for high-accuracy text extraction. Optimized frontend built with Next.js.",
-      "tech": ["Nest.js", "Next.js", "OCR (Tesseract.js)", "Regex", "Sharp", "SMTP"],
-      "status": "Live"
-    },
-    {
-      "year": "2024",
-      "title": "WordPress Portfolio Website",
-      "description": "Created and customized a personal portfolio website using WordPress, showcasing projects, skills, and achievements.",
-      "tech": ["WordPress", "PHP", "Elementor"],
-      "status": "Live"
+      "title": "Data Extraction",
+      "description": "OCR pipeline with Tesseract.js and Sharp for extracting text from documents, with email delivery through Gmail OAuth2 SMTP.",
+      "tech": ["NestJS", "Next.js", "Tesseract.js", "Sharp", "OAuth2"],
+      "status": "Private"
     }
   ],
   "note": "Stay tuned, there's more to come soon!"
